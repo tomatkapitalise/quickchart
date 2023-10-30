@@ -13,6 +13,8 @@ RUN apk add --no-cache libimagequant-dev
 RUN apk add --no-cache vips-dev
 RUN apk add --no-cache --virtual .runtime-deps graphviz
 
+RUN yarn global add node-gyp
+
 COPY package*.json .
 COPY yarn.lock .
 RUN yarn install --production
